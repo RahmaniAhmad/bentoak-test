@@ -5,7 +5,11 @@ interface MainLayoutProps {
   children: ReactNode;
 }
 const MainLayout = ({ children }: MainLayoutProps) => {
-  return <Stack style={{ minHeight: "100vh" }}>{children}</Stack>;
+  return (
+    <Stack style={{ minHeight: "100vh" }}>
+      <Stack px={{ xs: 2, md: 20 }}>{children}</Stack>
+    </Stack>
+  );
 };
 
 export default MainLayout;
