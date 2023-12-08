@@ -1,13 +1,7 @@
-import {
-  Button,
-  Divider,
-  Grid,
-  Stack,
-  TextField,
-  Typography,
-} from "@mui/material";
-import { useForm, FieldValues } from "react-hook-form";
+import { Button, Divider, Grid, Stack, Typography } from "@mui/material";
+import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import { FormTextInput } from "../../components/UI";
 
 type FormInputs = {
   username: string;
@@ -18,6 +12,7 @@ export const Login = () => {
     register,
     handleSubmit,
     formState: { errors },
+    control,
   } = useForm<FormInputs>();
   const formSubmit = async (filedValues: FormInputs) => {
     localStorage.setItem("username", filedValues.username);
@@ -42,33 +37,21 @@ export const Login = () => {
       >
         <Typography variant="h4">Login</Typography>
         <Divider />
-        <Stack textAlign="left">
-          <TextField
-            label="Username"
-            error={!!errors.username}
-            {...register("username", {
-              required: "Username is reauired!",
-            })}
-            name="username"
-          ></TextField>
-          {errors.username && (
-            <Typography variant="subtitle1" p={0} color="red">
-              {errors.username.message}
-            </Typography>
-          )}
-        </Stack>
-        <Stack textAlign="left">
-          <TextField
-            label="Password"
-            type="password"
-            error={!!errors.password}
-            {...register("password", { required: "Password is reauired!" })}
-            name="password"
-          ></TextField>
-          {errors.password && (
-            <Typography color="red">{errors.password.message}</Typography>
-          )}
-        </Stack>
+        <FormTextInput
+          name="username"
+          label="Username"
+          errorMessage={errors.username && errors.username.message}
+          control={control}
+          register={register}
+        />
+        <FormTextInput
+          name="password"
+          label="Password"
+          errorMessage={errors.password && errors.password.message}
+          control={control}
+          register={register}
+        />
+
         <Grid container spacing={2}>
           <Grid item xs={12} md={6}>
             <Button variant="contained" fullWidth type="submit">
