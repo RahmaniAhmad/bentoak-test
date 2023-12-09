@@ -1,6 +1,6 @@
 import { BrowserRouter } from "react-router-dom";
 import "./App.css";
-import { MainRouts } from "./routes";
+import { MainRoutes } from "./routes/mainRoutes";
 import { QueryClient, QueryClientProvider } from "react-query";
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
     <div className="App">
       <QueryClientProvider client={queryClient}>
         <BrowserRouter>
-          <MainRouts />
+          <MainRoutes />
         </BrowserRouter>
       </QueryClientProvider>
     </div>

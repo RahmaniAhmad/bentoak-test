@@ -11,3 +11,23 @@ export interface IProduct {
   thumbnail: string;
   images: string[];
 }
+
+export interface IPost {
+  userId: string;
+  id: number;
+  title: string;
+  body: string;
+}
+
+export interface IComment {
+  postId: number;
+  id: number;
+  name: string;
+  email: string;
+  body: string;
+}
+
+export interface IChartData {
+  postTitle: string;
+  commentsCount: number;
+}

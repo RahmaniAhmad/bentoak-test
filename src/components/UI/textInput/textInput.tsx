@@ -3,11 +3,22 @@ export interface TextInputProps {
   name?: string;
   label?: string;
   errorMessage?: string;
+  type?: React.HTMLInputTypeAttribute;
 }
-export const TextInput = ({ name, label, errorMessage }: TextInputProps) => {
+export const TextInput = ({
+  name,
+  label,
+  errorMessage,
+  type,
+}: TextInputProps) => {
   return (
     <Stack textAlign="left">
-      <TextField label={label} error={!!errorMessage} name={name}></TextField>
+      <TextField
+        type={type}
+        label={label}
+        error={!!errorMessage}
+        name={name}
+      ></TextField>
       {errorMessage && (
         <Typography variant="subtitle1" p={0} color="red">
           {errorMessage}

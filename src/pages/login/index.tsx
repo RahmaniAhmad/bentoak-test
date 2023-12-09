@@ -1,13 +1,15 @@
 import { Button, Divider, Grid, Stack, Typography } from "@mui/material";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FormTextInput } from "../../components/UI";
+import { DASHBOARD } from "../../constants/urls";
 
 type FormInputs = {
   username: string;
   password: string;
 };
 export const Login = () => {
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -16,6 +18,8 @@ export const Login = () => {
   } = useForm<FormInputs>();
   const formSubmit = async (filedValues: FormInputs) => {
     localStorage.setItem("username", filedValues.username);
+
+    navigate(DASHBOARD);
   };
   return (
     <form
@@ -47,6 +51,7 @@ export const Login = () => {
         <FormTextInput
           name="password"
           label="Password"
+          type="password"
           errorMessage={errors.password && errors.password.message}
           control={control}
           register={register}

@@ -48,6 +48,7 @@ export const Products = () => {
   return (
     <Stack
       spacing={4}
+      pt={4}
       alignItems="center"
       style={{ opacity: isLoading ? 0.5 : 1 }}
     >
