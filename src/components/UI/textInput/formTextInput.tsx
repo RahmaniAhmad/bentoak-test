@@ -5,6 +5,7 @@ import { TextInputProps } from "./textInput";
 export interface FormTextInputProps extends TextInputProps {
   name: string;
   label?: string;
+  type?: React.HTMLInputTypeAttribute;
   errorMessage?: string;
   control: Control<any, any>;
   register: UseFormRegister<any>;
@@ -12,6 +13,7 @@ export interface FormTextInputProps extends TextInputProps {
 export const FormTextInput = ({
   name,
   label,
+  type,
   errorMessage,
   control,
   register,
@@ -23,6 +25,7 @@ export const FormTextInput = ({
       render={({ field: { onChange, onBlur, value, ref } }) => (
         <Stack textAlign="left">
           <TextField
+            type={type}
             label={label}
             error={!!errorMessage}
             {...register(name, {

@@ -63,6 +63,7 @@ export const Register = () => {
         <FormTextInput
           name="password"
           label="Password"
+          type="password"
           errorMessage={errors.password && errors.password.message}
           control={control}
           register={register}
