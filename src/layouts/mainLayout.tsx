@@ -2,9 +2,10 @@ import { Logout } from "@mui/icons-material";
 import { Divider, IconButton, Stack, Typography } from "@mui/material";
 import { ReactNode, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 
 interface MainLayoutProps {
-  children: ReactNode;
+  children?: ReactNode;
 }
 const MainLayout = ({ children }: MainLayoutProps) => {
   const navigate = useNavigate();
@@ -42,7 +43,9 @@ const MainLayout = ({ children }: MainLayoutProps) => {
         </IconButton>
       </Stack>
       <Divider />
-      <Stack px={{ xs: 2, md: 20 }}>{children}</Stack>
+      <Stack px={{ xs: 2, md: 20 }}>
+        <Outlet />
+      </Stack>
     </Stack>
   );
 };

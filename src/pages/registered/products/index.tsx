@@ -1,6 +1,6 @@
 import { useQuery } from "react-query";
-import { getProducts } from "../../api";
-import { IProduct } from "../../types";
+import { getProducts } from "../../../api";
+import { IProduct } from "../../../types";
 import {
   IconButton,
   InputAdornment,
@@ -17,9 +17,9 @@ import {
 } from "@mui/material";
 import { Close } from "@mui/icons-material";
 import { ChangeEvent, useState } from "react";
-import { pageSize } from "../../constants/appConfig";
+import { pageSize } from "../../../constants/appConfig";
 import { useDebounce } from "use-debounce";
-import { ListLoading } from "../../components/loading/listLoading";
+import { ListLoading } from "../../../components/loading/listLoading";
 
 export const Products = () => {
   const [currentPage, setCurrentPage] = useState(1);

@@ -1,7 +1,7 @@
 import { Button, Divider, Grid, Stack, Typography } from "@mui/material";
 import { useForm, FieldValues } from "react-hook-form";
 import { Link } from "react-router-dom";
-import { FormTextInput } from "../../components/UI/textInput/formTextInput";
+import { FormTextInput } from "../../../components/UI/textInput/formTextInput";
 
 type FormInputs = {
   firstName: string;

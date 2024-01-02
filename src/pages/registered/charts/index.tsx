@@ -1,8 +1,8 @@
 import { useQuery } from "react-query";
-import { getPosts } from "../../api/post";
-import { IChartData, IPost } from "../../types";
+import { getPosts } from "../../../api/post";
+import { IChartData, IPost } from "../../../types";
 import { useEffect, useState } from "react";
-import { getCommentsCount } from "../../api/comment";
+import { getCommentsCount } from "../../../api/comment";
 import { Grid } from "@mui/material";
 import { LineChart, PieChart, RadarChart } from "./components";
 

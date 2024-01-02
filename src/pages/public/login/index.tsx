@@ -1,8 +1,8 @@
 import { Button, Divider, Grid, Stack, Typography } from "@mui/material";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
-import { FormTextInput } from "../../components/UI";
-import { DASHBOARD } from "../../constants/urls";
+import { FormTextInput } from "../../../components/UI";
+import { DASHBOARD } from "../../../constants/urls";
 
 type FormInputs = {
   username: string;

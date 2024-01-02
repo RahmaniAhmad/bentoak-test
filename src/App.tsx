@@ -1,7 +1,7 @@
 import { BrowserRouter } from "react-router-dom";
 import "./App.css";
-import { MainRoutes } from "./routes/mainRoutes";
 import { QueryClient, QueryClientProvider } from "react-query";
+import { Router } from "./routes";
 
 function App() {
   const queryClient = new QueryClient();
@@ -10,7 +10,7 @@ function App() {
     <div className="App">
       <QueryClientProvider client={queryClient}>
         <BrowserRouter>
-          <MainRoutes />
+          <Router />
         </BrowserRouter>
       </QueryClientProvider>
     </div>
