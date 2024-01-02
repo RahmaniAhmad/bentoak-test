@@ -1,5 +1,3 @@
-import { useQuery } from "react-query";
-import { getProducts } from "../../../api";
 import { IProduct } from "../../../types";
 import {
   IconButton,
@@ -16,24 +14,20 @@ import {
   TextField,
 } from "@mui/material";
 import { Close } from "@mui/icons-material";
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent } from "react";
 import { pageSize } from "../../../constants/appConfig";
-import { useDebounce } from "use-debounce";
 import { ListLoading } from "../../../components/loading/listLoading";
+import { useData } from "./useData";
 
 export const Products = () => {
-  const [currentPage, setCurrentPage] = useState(1);
-  const [filter, setFilter] = useState("");
-  const [debounceFilter] = useDebounce(filter, 500);
-
   const {
-    data: products,
-    error,
+    products,
     isLoading,
-  } = useQuery(["products", currentPage, debounceFilter], () =>
-    getProducts(currentPage, debounceFilter)
-  );
-
+    currentPage,
+    setCurrentPage,
+    filter,
+    setFilter,
+  } = useData();
   const handlePageChange = (
     event: React.ChangeEvent<unknown>,
     value: number

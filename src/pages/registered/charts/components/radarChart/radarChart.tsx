@@ -8,7 +8,7 @@ import {
   PolarRadiusAxis,
   Radar,
 } from "recharts";
-import { IChartData } from "../../../../types";
+import { IChartData } from "../../../../../types";
 
 interface LineChartProps {
   data: IChartData[];
